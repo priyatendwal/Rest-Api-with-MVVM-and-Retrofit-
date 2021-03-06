@@ -6,17 +6,19 @@ plugins {
 }
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 29
+    buildToolsVersion "30.0.0"
 
     defaultConfig {
         applicationId "com.project.mvvmrecipeapp"
-        minSdkVersion 21
-        targetSdkVersion 30
+        minSdkVersion 23
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -28,26 +30,28 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = '1.8'
         useIR = true
     }
-    composeOptions {
-        def kotlin_compiler_version = "1.4.30"
-        kotlinCompilerVersion kotlin_compiler_version
 
-        def kotlin_compiler_extension_version = "1.0.0-beta01"
-        kotlinCompilerExtensionVersion kotlin_compiler_extension_version
-    }
-    buildFeatures {
-        compose true
-    }
+
+composeOptions {
+    def kotlin_compiler_version = "1.4.30"
+    kotlinCompilerVersion kotlin_compiler_version
+
+    def kotlin_compiler_extension_version = "1.0.0-beta01"
+    kotlinCompilerExtensionVersion kotlin_compiler_extension_version
+}
+buildFeatures {
+    compose true
+}
 
 
 }
 
 dependencies {
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.4.30"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.3.2'
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.3.0'
